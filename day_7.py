@@ -53,6 +53,7 @@ def main():
     sum0 = 0
     for i in solved:
         val = solved[i]
+        print(i, val)
         if val <= 100000:
             sum0 += val
     
@@ -62,13 +63,21 @@ def main():
 
     numbs.sort()
     ret1 = 0
+    import re
+    allnumbs = re.findall("\d+", string)
+    tot = 0
+    for i in allnumbs:
+        tot += int(i)
     for i in numbs:
-        if (70000000-solved["/"]) + i >= 30000000:
+        if (70000000-tot) - 30000000 + i >= 0:
             ret1 = i
             break
+    print(sum0)
     print(ret1)
+
+    
     
     return sum0
     
 
-print(main())
+main()
